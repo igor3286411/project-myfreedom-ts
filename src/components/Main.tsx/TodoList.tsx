@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import { useActions } from "../hooks/useActions";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { useActions } from "../../hooks/useActions";
 
 const TodoList: React.FC = () => {
     const { page, error, loading, todos, limit } = useTypedSelector(state => state.todo)
     const { fetchTodos, setTodoPage } = useActions()
-    const pages = [1, 2, 3, 4, 5]
+    const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     useEffect(() => {
         fetchTodos(page, limit)

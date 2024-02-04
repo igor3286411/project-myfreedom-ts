@@ -1,13 +1,13 @@
-import UserList from "./components/UserList";
-import TodoList from "./components/TodoList";
+import { Header } from "./components/Header/Header";
+import { Main } from "./components/Main.tsx/Main";
+import './app.scss'
 
 const App = () => {
     return (
-        <div>
-            <UserList/>
-            <hr/>
-            <TodoList/>
-        </div>
+        <>
+            <Header />
+            <Main />
+        </>
     );
 };
 
