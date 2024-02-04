@@ -15,7 +15,7 @@ export const Users: React.FC<UsersProps> = ({ todos }) => {
                         <th>Имя</th>
                         <th>Роль</th>
                         <th>Подписка</th>
-                        <th>Токены <button></button></th>
+                        <th>Токены <button> </button></th>
                         <th>Действия</th>
                     </tr>
                 </thead>

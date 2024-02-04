@@ -4,7 +4,7 @@ import { useActions } from "../../../hooks/useActions";
 import { Users } from './Users';
 
 const TodoList: React.FC = () => {
-    const { page, error, loading, todos, limit } = useTypedSelector(state => state.todo)
+    const { page, error, todos, limit } = useTypedSelector(state => state.todo)
     const { fetchTodos, setTodoPage } = useActions()
     const pages = [1, 2, 3, 4, 5]
 
@@ -12,27 +12,30 @@ const TodoList: React.FC = () => {
         fetchTodos(page, limit)
     }, [page])
 
-    if (loading) {
-        return <h1>Идет загрузка...</h1>
-    }
     if (error) {
         return <h1>{error}</h1>
     }
 
     return (
-        <div>
+        <>
             <Users todos={todos} />
-            <div style={{ display: "flex" }}>
-                {pages.map((p, i) =>
-                    <div key={i}
-                        onClick={() => setTodoPage(p)}
-                        style={{ border: p === page ? '2px solid green' : '1px solid gray', padding: 10 }}
-                    >
-                        {p}
+            <div className='main__pages'>
+                <div className='main__pages-full'>
+                    <button className='main__pages-full-left' onClick={() => page !== 1 && setTodoPage(page - 1)}></button>
+                    <div className='main__pages-full-num'>
+                        {pages.map((p, i) =>
+                            <button key={i}
+                                onClick={() => setTodoPage(p)}
+                                className={p === page ? 'active' : ''}
+                            >
+                                {p}
+                            </button>
+                        )}
                     </div>
-                )}
+                    <button className='main__pages-full-right' onClick={() => page !== pages.length && setTodoPage(page + 1)}></button>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

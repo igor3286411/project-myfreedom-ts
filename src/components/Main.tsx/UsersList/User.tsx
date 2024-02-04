@@ -10,8 +10,8 @@ export const User: React.FC<UserProps> = ({ todo }) => {
             <td>{todo.subscription.plan.type}</td>
             <td>{todo.subscription.tokens} TKN</td>
             <td>
-                <button></button>
-                <button></button>
+                <button className="corect"></button>
+                <button className="delete"></button>
             </td>
         </tr>
     );

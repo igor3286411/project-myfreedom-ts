@@ -11,6 +11,11 @@
     background-color: #121825;
     padding: 29px 34px 45px;
     border-radius: 0 0 20px 20px;
+    button {
+        background-color: #121825;
+        border: none;
+        cursor: pointer;
+    }
 
     .form {
         h2 {
@@ -56,13 +61,72 @@
             height: 46px;
             color: #9CA3AF;
             border-radius: 15px;
+            button{
+                background-image: url('../../../public/images/sort.svg');
+                width: 9px;
+                height: 14px;
+            }
         }
-        tbody{
-            td{
+
+        tbody {
+            td {
                 border-bottom: solid #222B44 1px;
                 padding: 20px 0;
                 font-size: 14px;
+                .corect{
+                    background-image: url('../../../public/images/corect.svg');
+                    margin-right: 10px;
+                    width: 14px;
+                    height: 15px;
+                }
+                .delete{
+                    background-image: url('../../../public/images/delete.svg');
+                    width: 11px;
+                    height: 14px;
+                }
             }
+        }
+    }
+
+    &__pages {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+
+        &-full {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+
+            &-left {
+                background-image: url('../../../public/images/left.svg');
+                width: 10px;
+                height: 6px;
+            }
+
+            &-right {
+                background-image: url('../../../public/images/right.svg');
+                width: 10px;
+                height: 6px;
+            }
+            &-num{
+                color: white;
+                display: flex;
+                gap: 4px;
+                button{
+                    color: white;
+                    padding: 6px 14px;
+                    border-radius: 5px;
+                }
+                button.active{
+                    background-color: #1C64F2;
+                }
+            }
+        }
+
+        &-page-num {
+            display: flex;
         }
     }
 }
