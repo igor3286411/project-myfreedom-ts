@@ -3,15 +3,66 @@
     margin-top: 37px;
     padding: 24px 34px;
     border-bottom: 1px solid #222B44;
+    border-radius: 20px 20px 0 0;
 }
 
 
 .main {
     background-color: #121825;
     padding: 29px 34px 45px;
-    .form{
-        h2{
+    border-radius: 0 0 20px 20px;
+
+    .form {
+        h2 {
             margin-bottom: 24px;
+        }
+
+        &__input {
+            margin-bottom: 24px;
+            border: 2px solid #313E62;
+            border-radius: 15px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+                background-image: url('../../../public/images/subtract.svg');
+                width: 16px;
+                height: 16px;
+                background-color: #121825;
+                border: none;
+                cursor: pointer;
+            }
+
+            input {
+                padding: 3px;
+                font-size: 18px;
+                color: #ffffff;
+                background-color: #121825;
+                border: none;
+                outline: none;
+            }
+        }
+
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+
+        thead {
+            background-color: black;
+            height: 46px;
+            color: #9CA3AF;
+            border-radius: 15px;
+        }
+        tbody{
+            td{
+                border-bottom: solid #222B44 1px;
+                padding: 20px 0;
+                font-size: 14px;
+            }
         }
     }
 }

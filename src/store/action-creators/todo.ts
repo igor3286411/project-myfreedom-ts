@@ -6,7 +6,7 @@ export const fetchTodos = (page = 1, limit = 10) => {
     return async (dispatch: Dispatch<TodoAction>) => {
         try {
             dispatch({type: TodoActionTypes.FETCH_TODOS})
-            const response = await axios.get('https://test.gefara.xyz/api/v1/user/list', {
+            const response = await axios.get(`https://test.gefara.xyz/api/v1/user/list?page=${page}`, {
                 params: {_page: page, _limit: limit}
             })
             setTimeout(() => {

@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { useActions } from "../../hooks/useActions";
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
+import { useActions } from "../../../hooks/useActions";
+import { Users } from './Users';
 
 const TodoList: React.FC = () => {
     const { page, error, loading, todos, limit } = useTypedSelector(state => state.todo)
     const { fetchTodos, setTodoPage } = useActions()
-    const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    const pages = [1, 2, 3, 4, 5]
 
     useEffect(() => {
         fetchTodos(page, limit)
@@ -20,9 +21,7 @@ const TodoList: React.FC = () => {
 
     return (
         <div>
-            {todos.map((todo, i) =>
-                <div key={todo.id}>{i + 1} - {todo.name}</div>
-            )}
+            <Users todos={todos} />
             <div style={{ display: "flex" }}>
                 {pages.map((p, i) =>
                     <div key={i}

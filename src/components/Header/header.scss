@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     padding: 16px 24px;
+    border-radius: 20px;
 
     &__left {
         display: flex;
@@ -35,6 +36,7 @@
         padding: 8px 12px;
         border: solid 1px #222B44;
         border-radius: 10px;
+        cursor: pointer;
 
         p {
             font-size: 10px;
