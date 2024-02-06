@@ -7,6 +7,11 @@ const TodoList: React.FC = () => {
     const { page, error, todos, limit } = useTypedSelector(state => state.todo)
     const { fetchTodos, setTodoPage } = useActions()
     const pages = [1, 2, 3, 4, 5]
+    // const pages = []
+
+    // for (let i = 1; i <= todos.length / 10; i++) {
+    //     pages.push(i)
+    // }
 
     useEffect(() => {
         fetchTodos(page, limit)

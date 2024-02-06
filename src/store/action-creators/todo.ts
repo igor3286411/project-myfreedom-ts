@@ -8,6 +8,7 @@ export const fetchTodos = (page = 1, limit = 10) => {
       dispatch({ type: TodoActionTypes.FETCH_TODOS });
       const response = await axios.get(
         `https://test.gefara.xyz/api/v1/user/list?page=${page}`,
+        // `https://test.gefara.xyz/api/v1/user/list`,
         {
           params: { _page: page, _limit: limit },
         }
