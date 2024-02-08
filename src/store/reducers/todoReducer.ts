@@ -4,7 +4,7 @@ const initialState: TodoState = {
     todos: {} as TodoStateUsers,
     page: 1,
     error: null,
-    limit: 10,
+    search: '',
     loading: false
 }
 

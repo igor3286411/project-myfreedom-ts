@@ -9,7 +9,7 @@ export interface TodoState {
     loading: boolean;
     error: null | string;
     page: number;
-    limit: number;
+    search: string;
 }
 
 export enum TodoActionTypes {

@@ -2,16 +2,12 @@ import { Dispatch } from "redux";
 import axios from "axios";
 import { TodoAction, TodoActionTypes } from "../../types/todo";
 
-export const fetchTodos = (page = 1, limit = 10) => {
+export const fetchTodos = (page = 1) => {
   return async (dispatch: Dispatch<TodoAction>) => {
     try {
       dispatch({ type: TodoActionTypes.FETCH_TODOS });
       const response = await axios.get(
-        `https://test.gefara.xyz/api/v1/user/list?page=${page}`,
-        // `https://test.gefara.xyz/api/v1/user/list`,
-        {
-          params: { _page: page, _limit: limit },
-        }
+        `https://test.gefara.xyz/api/v1/user/list?page=${page}`
       );
       dispatch({
         type: TodoActionTypes.FETCH_TODOS_SUCCESS,
