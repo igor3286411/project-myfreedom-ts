@@ -1,7 +1,7 @@
-import {TodoAction, TodoActionTypes, TodoState} from "../../types/todo";
+import {TodoAction, TodoActionTypes, TodoState, TodoStateUsers} from "../../types/todo";
 
 const initialState: TodoState = {
-    todos: [],
+    todos: {} as TodoStateUsers,
     page: 1,
     error: null,
     limit: 10,

@@ -1,12 +1,11 @@
 export interface TodoStateUsers{
     data: any[];
     pages: number;
-    action: object;
 }
 
 
 export interface TodoState {
-    todos?: TodoStateUsers;
+    todos: TodoStateUsers;
     loading: boolean;
     error: null | string;
     page: number;
@@ -24,7 +23,7 @@ interface FetchTodoAction {
 }
 interface FetchTodoSuccessAction {
     type: TodoActionTypes.FETCH_TODOS_SUCCESS;
-    payload: any[];
+    payload: TodoStateUsers;
 }
 interface FetchTodoErrorAction {
     type: TodoActionTypes.FETCH_TODOS_ERROR;
