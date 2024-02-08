@@ -6,12 +6,12 @@ import { Users } from './Users';
 const TodoList: React.FC = () => {
     const { page, error, todos, limit } = useTypedSelector(state => state.todo)
     const { fetchTodos, setTodoPage } = useActions()
-    const pages = [1, 2, 3, 4, 5]
-    // const pages = []
+    const pagesNumber = []
+    const { data, pages }: any = todos
 
-    // for (let i = 1; i <= todos.length / 10; i++) {
-    //     pages.push(i)
-    // }
+    for (let i = 1; i <= pages; i++) {
+        pagesNumber.push(i)
+    }
 
     useEffect(() => {
         fetchTodos(page, limit)
@@ -20,28 +20,32 @@ const TodoList: React.FC = () => {
     if (error) {
         return <h1>{error}</h1>
     }
+    console.log(data);
+    
 
-    return (
-        <>
-            <Users todos={todos} />
-            <div className='main__pages'>
-                <div className='main__pages-full'>
-                    <button className='main__pages-full-left' onClick={() => page !== 1 && setTodoPage(page - 1)}></button>
-                    <div className='main__pages-full-num'>
-                        {pages.map((p, i) =>
-                            <button key={i}
-                                onClick={() => setTodoPage(p)}
-                                className={p === page ? 'active' : ''}
-                            >
-                                {p}
-                            </button>
-                        )}
+    if (data) {
+        return (
+            <>
+                <Users todose={data} />
+                <div className='main__pages'>
+                    <div className='main__pages-full'>
+                        <button className='main__pages-full-left' onClick={() => page !== 1 && setTodoPage(page - 1)}></button>
+                        <div className='main__pages-full-num'>
+                            {pagesNumber.map((p, i) =>
+                                <button key={i}
+                                    onClick={() => setTodoPage(p)}
+                                    className={p === page ? 'active' : ''}
+                                >
+                                    {p}
+                                </button>
+                            )}
+                        </div>
+                        <button className='main__pages-full-right' onClick={() => page !== pages && setTodoPage(page + 1)}></button>
                     </div>
-                    <button className='main__pages-full-right' onClick={() => page !== pages.length && setTodoPage(page + 1)}></button>
                 </div>
-            </div>
-        </>
-    );
+            </>
+        );
+    }
 };
 
 export default TodoList;

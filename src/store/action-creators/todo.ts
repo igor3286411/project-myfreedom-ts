@@ -15,7 +15,7 @@ export const fetchTodos = (page = 1, limit = 10) => {
       );
       dispatch({
         type: TodoActionTypes.FETCH_TODOS_SUCCESS,
-        payload: response.data.data,
+        payload: response.data,
       });
     } catch (e) {
       dispatch({

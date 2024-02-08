@@ -1,5 +1,12 @@
+export interface TodoStateUsers{
+    data: any[];
+    pages: number;
+    action: object;
+}
+
+
 export interface TodoState {
-    todos: any[];
+    todos?: TodoStateUsers;
     loading: boolean;
     error: null | string;
     page: number;

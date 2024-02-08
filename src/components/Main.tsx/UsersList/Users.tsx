@@ -1,11 +1,15 @@
 import React from "react"
 import { User } from "./User"
 
+
 interface UsersProps {
-    todos: any[]
+    todose: any[]
 }
 
-export const Users: React.FC<UsersProps> = ({ todos }) => {
+export const Users: React.FC<UsersProps> = ({ todose }: any) => {
+
+    console.log(todose);
+    
     return (
         <div>
             <table>
@@ -20,7 +24,7 @@ export const Users: React.FC<UsersProps> = ({ todos }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {todos.map((todo) =>
+                    {todose.map((todo : any) =>
                         <User todo={todo} key={todo.id} />
                     )}
                 </tbody>
