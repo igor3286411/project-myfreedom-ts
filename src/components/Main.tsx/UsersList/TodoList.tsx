@@ -4,7 +4,7 @@ import { useActions } from "../../../hooks/useActions";
 import { Users } from './Users';
 
 const TodoList: React.FC = () => {
-    const { page, error, todos} = useTypedSelector(state => state.todo)
+    const { page, error, todos, search } = useTypedSelector(state => state.todo)
     const { fetchTodos, setTodoPage } = useActions()
     const pagesNumber = []
     const { data, pages }: any = todos
@@ -14,14 +14,13 @@ const TodoList: React.FC = () => {
     }
 
     useEffect(() => {
-        fetchTodos(page)
-    }, [page])
+        fetchTodos(page, search)
+    }, [page, search])
+
 
     if (error) {
         return <h1>{error}</h1>
     }
-    console.log(data);
-    
 
     if (data) {
         return (
@@ -47,5 +46,4 @@ const TodoList: React.FC = () => {
         );
     }
 };
-
 export default TodoList;

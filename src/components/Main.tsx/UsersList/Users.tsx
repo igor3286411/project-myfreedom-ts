@@ -7,8 +7,6 @@ interface UsersProps {
 }
 
 export const Users: React.FC<UsersProps> = ({ users }: any) => {
-
-    console.log(users);
     
     return (
         <div>
@@ -31,4 +29,5 @@ export const Users: React.FC<UsersProps> = ({ users }: any) => {
             </table>
         </div>
     )
+    
 }

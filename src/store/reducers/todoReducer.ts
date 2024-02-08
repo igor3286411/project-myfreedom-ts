@@ -18,6 +18,8 @@ export const todoReducer = (state = initialState, action: TodoAction): TodoState
             return {...state, loading: false, error: action.payload}
         case TodoActionTypes.SET_TODO_PAGE:
             return {...state, page: action.payload}
+        case TodoActionTypes.SET_SEARCH:
+            return {...state, loading: false, search: action.payload}
         default:
             return state
     }
