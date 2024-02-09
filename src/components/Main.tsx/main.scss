@@ -84,6 +84,12 @@
                     width: 11px;
                     height: 14px;
                 }
+                &.click{
+                    cursor: pointer;
+                    &:hover{
+                        color: #9CA3AF;
+                    }
+                }
             }
         }
     }

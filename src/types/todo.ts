@@ -9,6 +9,7 @@ export interface TodoState {
   error: null | string;
   page: number;
   search: string;
+  transaction: boolean;
 }
 
 export enum TodoActionTypes {
@@ -17,6 +18,7 @@ export enum TodoActionTypes {
   FETCH_TODOS_ERROR = "FETCH_TODOS_ERROR",
   SET_TODO_PAGE = "SET_TODO_PAGE",
   SET_SEARCH = "SET_SEARCH",
+  SET_TRANSACTION = "SET_TRANSACTION",
 }
 interface FetchTodoAction {
   type: TodoActionTypes.FETCH_TODOS;
@@ -37,10 +39,15 @@ interface SetSearch {
   type: TodoActionTypes.SET_SEARCH;
   payload: string;
 }
+interface SetTransaction {
+  type: TodoActionTypes.SET_TRANSACTION;
+  payload: boolean;
+}
 
 export type TodoAction =
   | FetchTodoAction
   | FetchTodoErrorAction
   | FetchTodoSuccessAction
   | SetTodoPage
-  | SetSearch;
+  | SetSearch
+  | SetTransaction;

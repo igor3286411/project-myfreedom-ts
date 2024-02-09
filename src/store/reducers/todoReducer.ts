@@ -5,7 +5,8 @@ const initialState: TodoState = {
     page: 1,
     error: null,
     search: '',
-    loading: false
+    loading: false,
+    transaction: false,
 }
 
 export const todoReducer = (state = initialState, action: TodoAction): TodoState => {
@@ -19,7 +20,9 @@ export const todoReducer = (state = initialState, action: TodoAction): TodoState
         case TodoActionTypes.SET_TODO_PAGE:
             return {...state, page: action.payload}
         case TodoActionTypes.SET_SEARCH:
-            return {...state, loading: false, search: action.payload}
+            return {...state, search: action.payload}
+        case TodoActionTypes.SET_TRANSACTION:
+            return {...state, transaction: action.payload}
         default:
             return state
     }
