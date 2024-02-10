@@ -21,11 +21,15 @@ const TodoList: React.FC = () => {
     if (error) {
         return <h1>{error}</h1>
     }
+    console.log(data);
+    console.log(page);
+    
+    
 
     if (data) {
         return (
             <>
-                <Users users={data} />
+                <Users users={data} pages={pages}/>
                 <div className='main__pages'>
                     <div className='main__pages-full'>
                         <button className='main__pages-full-left' onClick={() => page !== 1 && setTodoPage(page - 1)}></button>

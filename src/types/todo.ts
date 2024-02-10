@@ -1,5 +1,5 @@
 export interface TodoStateUsers {
-  data: any[];
+  data: any;
   pages: number;
 }
 
@@ -26,6 +26,7 @@ export enum TodoActionTypes {
   SET_TODO_PAGE = "SET_TODO_PAGE",
   SET_SEARCH = "SET_SEARCH",
   SET_TRANSACTION = "SET_TRANSACTION",
+  DELETE_USER="DELETE_USER",
 }
 interface FetchTodoAction {
   type: TodoActionTypes.FETCH_TODOS;
@@ -50,6 +51,10 @@ interface SetTransaction {
   type: TodoActionTypes.SET_TRANSACTION;
   payload: boolean;
 }
+interface SetDelete {
+  type: TodoActionTypes.DELETE_USER;
+  payload: any;
+}
 
 export type TodoAction =
   | FetchTodoAction
@@ -57,4 +62,5 @@ export type TodoAction =
   | FetchTodoSuccessAction
   | SetTodoPage
   | SetSearch
-  | SetTransaction;
+  | SetTransaction
+  | SetDelete

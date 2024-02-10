@@ -4,9 +4,10 @@ import { User } from "./User"
 
 interface UsersProps {
     users: any[],
+    pages: number
 }
 
-export const Users: React.FC<UsersProps> = ({ users }) => {
+export const Users: React.FC<UsersProps> = ({ users, pages }) => {
     
     return (
         <div>
@@ -23,7 +24,7 @@ export const Users: React.FC<UsersProps> = ({ users }) => {
                 </thead>
                 <tbody>
                     {users.map((todo : any) =>
-                        <User todo={todo} key={todo.id}/>
+                        <User todo={todo} key={todo.id} pages={pages}/>
                     )}
                 </tbody>
             </table>
