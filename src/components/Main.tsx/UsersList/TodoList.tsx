@@ -20,11 +20,7 @@ const TodoList: React.FC = () => {
 
     if (error) {
         return <h1>{error}</h1>
-    }
-    console.log(data);
-    console.log(page);
-    
-    
+    } 
 
     if (data) {
         return (

@@ -4,16 +4,28 @@
     justify-content: space-between;
     padding: 16px 24px;
     border-radius: 20px;
+    @media(max-width:650px) {
+        display: block;
+    }
 
     &__left {
         display: flex;
         gap: 70px;
+        @media(max-width:650px) {
+            justify-content: space-between;
+        }
+        @media(max-width:450px) {
+            gap: 20px;
+        }
 
         a {
             font-size: 35px;
             font-weight: bold;
             text-decoration: none;
             color: white;
+            @media(max-width:450px) {
+                font-size: 25px;
+            }
         }
 
         &-org {
@@ -37,6 +49,9 @@
         border: solid 1px #222B44;
         border-radius: 10px;
         cursor: pointer;
+        @media(max-width:650px) {
+            display: none;
+        }
 
         p {
             font-size: 10px;

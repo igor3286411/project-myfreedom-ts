@@ -27,12 +27,12 @@ export const User: React.FC<UserProps> = ({ todo, pages }: any) => {
 
     return (
         <tr key={todo.id}>
-            <td className="click" onClick={() => handleChange(todo.id, todo.email)}>{todo.email}</td>
+            <td className="click adaptiv-5" onClick={() => handleChange(todo.id, todo.email)}>{todo.email}</td>
             <td className="click" onClick={() => handleChange(todo.id, todo.email)}>{todo.name}</td>
-            <td>{todo.role}</td>
-            <td>{todo.subscription.plan.type}</td>
-            <td>{todo.subscription.tokens} TKN</td>
-            <td>
+            <td className="adaptiv-1">{todo.role}</td>
+            <td className="adaptiv-2">{todo.subscription.plan.type}</td>
+            <td className="adaptiv-3">{todo.subscription.tokens} TKN</td>
+            <td className="adaptiv-4">
                 <button className="corect"></button>
                 <button className="delete" onClick={() => handleChangeDelete(todo.id)}></button>
             </td>

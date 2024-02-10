@@ -14,12 +14,12 @@ export const Users: React.FC<UsersProps> = ({ users, pages }) => {
             <table className="main__table">
                 <thead>
                     <tr>
-                        <th>Email</th>
+                        <th className="adaptiv-5">Email</th>
                         <th>Имя</th>
-                        <th>Роль</th>
-                        <th>Подписка</th>
-                        <th>Токены <button> </button></th>
-                        <th>Действия</th>
+                        <th className="adaptiv-1">Роль</th>
+                        <th className="adaptiv-2">Подписка</th>
+                        <th className="adaptiv-3">Токены <button> </button></th>
+                        <th className="adaptiv-4">Действия</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -4,6 +4,9 @@
     padding: 24px 34px;
     border-bottom: 1px solid #222B44;
     border-radius: 20px 20px 0 0;
+    @media(max-width:800px) {
+        padding: 20px;
+    }
 }
 
 
@@ -11,6 +14,9 @@
     background-color: rgba(18, 24, 37);
     padding: 29px 34px 45px;
     border-radius: 0 0 20px 20px;
+    @media(max-width:800px) {
+        padding: 20px;
+    }
     button {
         background-color: #121825;
         border: none;
@@ -90,6 +96,31 @@
                         color: #9CA3AF;
                     }
                 }
+            }
+        }
+        .adaptiv-1 {
+            @media(max-width:830px) {
+                display: none;
+            }
+        }
+        .adaptiv-2 {
+            @media(max-width:800px) {
+                display: none;
+            }
+        }
+        .adaptiv-3 {
+            @media(max-width:600px) {
+                display: none;
+            }
+        }
+        .adaptiv-4 {
+            @media(max-width:750px) {
+                display: none;
+            }
+        }
+        .adaptiv-5 {
+            @media(max-width:540px) {
+                display: none;
             }
         }
     }

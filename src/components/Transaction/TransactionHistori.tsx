@@ -18,7 +18,7 @@ export const TransactionHistori: React.FC<TransactionHistoriProps> = ({ appState
                 </thead>
                 <tbody>
                     {appState.map((transaction, i) => (
-                        i < 17 &&
+                        i < 18 &&
                         <tr key={transaction.id}>
                             <td>{transaction.type === 'WRITE_OFF' ? 'Списание' : 'Пополнение'}</td>
                             {transaction.type === 'WRITE_OFF' ? <td className="td-red">-{transaction.amount}</td> : <td className="td-green">+{transaction.amount}</td>}
