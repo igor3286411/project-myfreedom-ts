@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import { useActions } from "../../../hooks/useActions";
 import { Users } from './Users';
-import { Transaction } from '../Transaction';
 
 const TodoList: React.FC = () => {
     const { page, error, todos, search } = useTypedSelector(state => state.todo)
@@ -43,7 +42,6 @@ const TodoList: React.FC = () => {
                         <button className='main__pages-full-right' onClick={() => page !== pages && setTodoPage(page + 1)}></button>
                     </div>
                 </div>
-                <Transaction />
             </>
         );
     }

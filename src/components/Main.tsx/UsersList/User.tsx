@@ -6,20 +6,21 @@ import { TodoActionTypes } from "../../../types/todo";
 export const User: React.FC<UserProps> = ({ todo }: any) => {
     const dispatch = useDispatch();
 
-    const handleChange = (id: any) => {
+    const handleChange = (id: any, email: string) => {
         dispatch({
             type: TodoActionTypes.SET_TRANSACTION,
             payload: {
                 transaction: true,
-                id: id
+                id,
+                email,
             },
         });
     };
 
     return (
         <tr key={todo.id}>
-            <td>{todo.email}</td>
-            <td className="click" onClick={() => handleChange(todo.id)}>{todo.name}</td>
+            <td className="click" onClick={() => handleChange(todo.id, todo.email)}>{todo.email}</td>
+            <td className="click" onClick={() => handleChange(todo.id, todo.email)}>{todo.name}</td>
             <td>{todo.role}</td>
             <td>{todo.subscription.plan.type}</td>
             <td>{todo.subscription.tokens} TKN</td>

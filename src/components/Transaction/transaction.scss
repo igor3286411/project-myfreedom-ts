@@ -1,0 +1,23 @@
+.transaction {
+    padding: 56px 40px 20px 20px;
+    color: white;
+
+    h2 {
+        font-size: 20px;
+    }
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            background-image: url('../../../public/images/close-transaction.svg');
+            width: 24px;
+            height: 24px;
+            background-color: #121825;
+            border: none;
+            cursor: pointer;
+
+        }
+    }
+}

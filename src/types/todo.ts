@@ -3,13 +3,20 @@ export interface TodoStateUsers {
   pages: number;
 }
 
+export interface TodoStateTransaction {
+  transaction: boolean
+  id: string;
+  email: string;
+}
+
+
 export interface TodoState {
   todos: TodoStateUsers;
   loading: boolean;
   error: null | string;
   page: number;
   search: string;
-  transaction: boolean;
+  transactions: any;
 }
 
 export enum TodoActionTypes {

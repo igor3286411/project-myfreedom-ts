@@ -1,4 +1,4 @@
-import {TodoAction, TodoActionTypes, TodoState, TodoStateUsers} from "../../types/todo";
+import {TodoAction, TodoActionTypes, TodoState, TodoStateTransaction, TodoStateUsers} from "../../types/todo";
 
 const initialState: TodoState = {
     todos: {} as TodoStateUsers,
@@ -6,7 +6,11 @@ const initialState: TodoState = {
     error: null,
     search: '',
     loading: false,
-    transaction: false,
+    transactions: {
+        transaction: false,
+        id: "",
+        email: "",
+    } as TodoStateTransaction,
 }
 
 export const todoReducer = (state = initialState, action: TodoAction): TodoState => {
@@ -22,7 +26,7 @@ export const todoReducer = (state = initialState, action: TodoAction): TodoState
         case TodoActionTypes.SET_SEARCH:
             return {...state, search: action.payload}
         case TodoActionTypes.SET_TRANSACTION:
-            return {...state, transaction: action.payload}
+            return {...state, transactions: action.payload}
         default:
             return state
     }
