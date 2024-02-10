@@ -1,7 +1,10 @@
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 import './header.scss'
 export const Header = () => {
+  const { transactions } = useTypedSelector(state => state.todo)
+  const { transaction } = transactions
   return (
-    <section className='header'>
+    <section className={transaction ? "header open-transaction" : "header"}>
       <div className='header__left'>
         <a href="/">BitTest</a>
         <div className='header__left-org'>

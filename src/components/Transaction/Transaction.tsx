@@ -17,11 +17,11 @@ export const Transaction = () => {
       const allPersons = resp.data;
       setAppState(allPersons);
     });
-  }, [transaction]);
+  }, [transaction, id]);
 
   return (
     <Slide direction="left" in={transaction} mountOnEnter unmountOnExit>
-      <Paper sx={{ width: "470px", height: "100vh", position: "fixed", right: 1, top: 1, borderRadius: "0", backgroundColor: "#121825" }} elevation={4}>
+      <Paper sx={{ maxWidth: "470px", position: "absolute", right: 1, top: 1, borderRadius: "0", backgroundColor: "#121825" }} elevation={4}>
         <TransactionUserMenu email={email} appState={appState} />
       </Paper>
     </Slide>

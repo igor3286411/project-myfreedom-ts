@@ -8,7 +8,7 @@
 
 
 .main {
-    background-color: #121825;
+    background-color: rgba(18, 24, 37);
     padding: 29px 34px 45px;
     border-radius: 0 0 20px 20px;
     button {
@@ -52,7 +52,7 @@
 
     }
 
-    table {
+    .main__table {
         width: 100%;
         text-align: center;
 
@@ -135,4 +135,8 @@
             display: flex;
         }
     }
+}
+
+.open-transaction{
+    background-color: rgba(18, 24, 37, 0.60);
 }

@@ -10,7 +10,7 @@ export const Users: React.FC<UsersProps> = ({ users }) => {
     
     return (
         <div>
-            <table>
+            <table className="main__table">
                 <thead>
                     <tr>
                         <th>Email</th>

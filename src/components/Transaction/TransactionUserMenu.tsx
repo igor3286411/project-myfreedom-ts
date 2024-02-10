@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux";
 import { TodoActionTypes } from "../../types/todo";
+import { Chart } from "./LineChart";
+import { TransactionHistori } from "./TransactionHistori";
 
 interface TransactionUserMenuProps {
     email: string,
@@ -25,11 +27,13 @@ export const TransactionUserMenu: React.FC<TransactionUserMenuProps> = ({ email,
             </div>
             <div className="transaction-chart">
                 <h2>Использование токенов</h2>
+                <Chart appState={appState} />
+                <div className="transaction-chart__bottom">
+                    <div></div>
+                    <p>{email}</p>
+                </div>
             </div>
-            {appState.map((transaction, i) => (
-                i < 10 &&
-                <p key={transaction.id}>{transaction.type} {transaction.amount} {transaction.created_at}</p>
-            ))}
+            <TransactionHistori appState={appState}/>
         </div>
     )
 }

@@ -7,12 +7,13 @@ import "./main.scss"
 export const Main = () => {
     const { transactions } = useTypedSelector(state => state.todo)
     const { transaction } = transactions
+
     return (
         <>
-            <div className="main__my-organization">
+            <div className={transaction ? "main__my-organization open-transaction" : "main__my-organization"}>
                 <h2>Моя организация</h2>
             </div>
-            <section className="main">
+            <section className={transaction ? "main open-transaction" : "main"}>
                 <Form />
                 <TodoList />
             </section>
