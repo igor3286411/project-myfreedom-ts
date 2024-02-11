@@ -1,0 +1,80 @@
+.transaction {
+    padding: 20px;
+    color: white;
+
+    h2 {
+        font-size: 20px;
+    }
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 18px;
+
+        button {
+            background-image: url('../../../public/images/close-transaction.svg');
+            width: 24px;
+            height: 24px;
+            background-color: #121825;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    &-chart {
+        h2 {
+            margin-bottom: 18px;
+        }
+
+        &__bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            color: #616D8D;
+            padding-bottom: 18px;
+            border-bottom: solid 1px #222B44;
+
+            div {
+                background-color: #1C64F2;
+                border-radius: 2px;
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+
+    .transaction__table {
+        h2{
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            text-align: center;
+
+            thead {
+                background-color: black;
+                height: 44px;
+                color: #9CA3AF;
+            }
+
+            tbody {
+                td {
+                    border-bottom: solid #222B44 1px;
+                    padding: 16px 0;
+                    font-size: 14px;
+                }
+
+                .td-red {
+                    color: red;
+                }
+
+                .td-green {
+                    color: green;
+                }
+            }
+        }
+
+    }
+
+}
