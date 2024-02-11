@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://igor3286411.github.io/project-myfreedom-ts/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -18,10 +19,6 @@
     "@reduxjs/toolkit": "^2.1.0",
     "@types/react-redux": "^7.1.33",
     "axios": "^1.6.7",
-    "c3": "^0.4.24",
-    "chart.js": "^4.4.1",
-    "d3": "^7.8.5",
-    "faker": "^6.6.6",
     "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
