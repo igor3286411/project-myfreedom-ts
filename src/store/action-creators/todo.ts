@@ -2,23 +2,21 @@ import { Dispatch } from "redux";
 import axios from "axios";
 import { TodoAction, TodoActionTypes } from "../../types/todo";
 
-export const fetchTodos = (page = 1, search: string) => {
+export const fetchTodos = (page = 1, search: string, sort: number) => {
   return async (dispatch: Dispatch<TodoAction>) => {
     try {
-      if (search) {
-        const response = await axios.get(
-          `https://test.gefara.xyz/api/v1/user/list?search=${search}`
-        );
+      const apiUrl = search ? `https://test.gefara.xyz/api/v1/user/list?search=${search}` : `https://test.gefara.xyz/api/v1/user/list?page=${page}`
+      const apiUserSort = `https://test.gefara.xyz/api/v1/user/list?page=${page}&orderBy=tokens%3A${sort === 1 ? 'desc' : 'asc'}`
+      if (sort === 0 || search) {
+        dispatch({ type: TodoActionTypes.FETCH_TODOS });
+        const response = await axios.get(apiUrl);
         dispatch({
           type: TodoActionTypes.FETCH_TODOS_SUCCESS,
           payload: response.data,
         });
-      }
-      if (!search) {
+      } else {
         dispatch({ type: TodoActionTypes.FETCH_TODOS });
-        const response = await axios.get(
-          `https://test.gefara.xyz/api/v1/user/list?page=${page}`
-        );
+        const response = await axios.get(apiUserSort);
         dispatch({
           type: TodoActionTypes.FETCH_TODOS_SUCCESS,
           payload: response.data,

@@ -11,6 +11,7 @@ const initialState: TodoState = {
         id: "",
         email: "",
     } as TodoStateTransaction,
+    sort: 0,
 }
 
 export const todoReducer = (state = initialState, action: TodoAction): TodoState => {
@@ -27,6 +28,8 @@ export const todoReducer = (state = initialState, action: TodoAction): TodoState
             return {...state, search: action.payload}
         case TodoActionTypes.SET_TRANSACTION:
             return {...state, transactions: action.payload}
+        case TodoActionTypes.SORT_USERS:
+            return {...state, sort: action.payload}
         case TodoActionTypes.DELETE_USER:
             return { ...state, todos: {data: state.todos.data.filter((user : any) => user.id !== action.payload.id), pages: action.payload.pages} };
         default:

@@ -17,6 +17,7 @@ export interface TodoState {
   page: number;
   search: string;
   transactions: any;
+  sort: number;
 }
 
 export enum TodoActionTypes {
@@ -26,6 +27,7 @@ export enum TodoActionTypes {
   SET_TODO_PAGE = "SET_TODO_PAGE",
   SET_SEARCH = "SET_SEARCH",
   SET_TRANSACTION = "SET_TRANSACTION",
+  SORT_USERS = "SORT_USERS",
   DELETE_USER="DELETE_USER",
 }
 interface FetchTodoAction {
@@ -55,6 +57,10 @@ interface SetDelete {
   type: TodoActionTypes.DELETE_USER;
   payload: any;
 }
+interface SortUsers {
+  type: TodoActionTypes.SORT_USERS;
+  payload: number;
+}
 
 export type TodoAction =
   | FetchTodoAction
@@ -64,3 +70,4 @@ export type TodoAction =
   | SetSearch
   | SetTransaction
   | SetDelete
+  | SortUsers
