@@ -2,8 +2,6 @@ interface TransactionHistoriProps {
     appState: any[],
 }
 
-// {transaction.created_at}
-
 export const TransactionHistori: React.FC<TransactionHistoriProps> = ({ appState }) => {
     return (
         <div className="transaction__table">
@@ -27,7 +25,6 @@ export const TransactionHistori: React.FC<TransactionHistoriProps> = ({ appState
                     ))}
                 </tbody>
             </table>
-
         </div>
     )
 }

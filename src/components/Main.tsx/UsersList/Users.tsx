@@ -53,5 +53,4 @@ export const Users: React.FC<UsersProps> = ({ users, pages }) => {
             </table>
         </div>
     )
-
 }
