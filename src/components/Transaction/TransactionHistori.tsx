@@ -21,7 +21,7 @@ export const TransactionHistori: React.FC<TransactionHistoriProps> = ({ appState
                         i < 18 &&
                         <tr key={transaction.id}>
                             <td>{transaction.type === 'WRITE_OFF' ? 'Списание' : 'Пополнение'}</td>
-                            {transaction.type === 'WRITE_OFF' ? <td className="td-red">-{transaction.amount}</td> : <td className="td-green">+{transaction.amount}</td>}
+                            {transaction.type === 'WRITE_OFF' ? <td className="td-red">-{transaction.amount} BTKN</td> : <td className="td-green">+{transaction.amount} BTKN</td>}
                             <td width="100">{transaction.created_at.split('T')[0]}, {transaction.created_at.split('T')[1].split('.')[0]}</td>
                         </tr>
                     ))}

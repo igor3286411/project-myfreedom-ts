@@ -9,6 +9,7 @@ interface UsersProps {
 
 export const Users: React.FC<UsersProps> = ({ users, pages }) => {
     
+    
     return (
         <div>
             <table className="main__table">

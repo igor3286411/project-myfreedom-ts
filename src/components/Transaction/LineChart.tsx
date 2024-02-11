@@ -17,13 +17,11 @@ interface ChartProps {
 export const Chart: React.FC<ChartProps> = ({ appState }) => {
     const windowWidth = useRef(window.innerWidth);
     const pdata: any = []
-    appState.length > 0 && appState.map((transaction, i) => (i < 10 && pdata.push({
+    appState.length > 0 && appState.map((transaction) => pdata.push({
         name: `${transaction.created_at.split('T')[0]}`,
         BTKN: transaction.amount,
-    })))
+    }))
 
- console.log(windowWidth);
- 
     return (
         <ResponsiveContainer minWidth={windowWidth.current < 450 ? 330 : 400} height="100%" aspect={2}>
             <LineChart data={pdata}>
